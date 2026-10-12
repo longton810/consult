@@ -17,7 +17,7 @@ Open `index.html` locally, or visit the published GitHub Pages site. No installa
 ## Upload to GitHub
 
 1. Extract the ZIP and open the MedicalConsultation folder.
-2. Upload its contents to the repository root: `index.html`, `style.css`, `script.js`, the entire `assets` folder, `.nojekyll`, and this README. Do not upload the ZIP itself or nest everything in another MedicalConsultation folder.
+2. Use a repository named `consult` and upload its contents to the repository root: `index.html`, `style.css`, `script.js`, `PDF-LIB-LICENSE.md`, `.nojekyll`, and this README. Do not upload the ZIP itself or nest everything in another MedicalConsultation folder.
 3. In repository Settings → Pages, choose Deploy from a branch, select `main` and `/ (root)`, and save.
 4. Wait for deployment to finish, then open the published link.
 
@@ -25,6 +25,6 @@ For updates, replace the existing files in the same locations and commit the cha
 
 ## Included assets
 
-`assets/form-template.js` includes the original first page and your replacement second page. `assets/pdf-lib.min.js` and its license provide PDF generation locally. Keep these files with the three main files.
+`script.js` bundles the PDF library, the original first page, your replacement second page, and the application. Upload the three main files together; no assets folder is required. Keep `PDF-LIB-LICENSE.md` for the included library license.
 
 Signatures and physician response spaces remain available on the original form. Long unrestricted passages continue onto page 2 or additional pages when necessary. The PDF uses Helvetica for entered text; the webpage uses Arial.
