@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Medical Consultation | Long Ton</title>
+  <link rel="stylesheet" href="style.css?v=c7df5db39d">
+</head>
+<body>
+  <header class="page-header"><div><span class="eyebrow">LECOM SCHOOL OF DENTAL MEDICINE</span><h1>Medical Consultation</h1></div><a class="quiet-link" href="https://longton810.github.io/">Dental Tools ↗</a></header>
+  <main class="workspace">
+    <form id="consultationForm" autocomplete="off">
+      <section class="panel"><h2>Information</h2><div class="field-grid information-grid">
+        <div class="information-column">
+          <label>Student name<input name="studentName" type="text" value="Long T. Ton"></label>
+          <label>Practice name<textarea name="practiceName" rows="2">LECOM - Erie Dental Offices
+(POD 2)</textarea></label>
+          <div class="patient-name-field" role="group" aria-labelledby="patientNameLabel">
+            <div id="patientNameLabel" class="passage-label">Patient name</div>
+            <div class="patient-name-row">
+              <input name="firstName" type="text" autocomplete="given-name" placeholder="First name" aria-label="First name">
+              <input name="lastName" type="text" autocomplete="family-name" placeholder="Last name" aria-label="Last name">
+            </div>
+          </div>
+        </div>
+        <div class="information-column">
+          <label>Date<input name="requestDate" type="date"></label>
+          <label>Practice phone<input name="practicePhone" type="tel" value="(814) 868 1001"></label>
+          <label>Practice fax<input name="practiceFax" type="tel" value="(814) 868 1039"></label>
+          <label>Date of birth<input name="dob" type="date"></label>
+        </div>
+      </div></section>
+      <section class="panel"><h2>Planned dental treatment</h2><div id="treatmentOptions" class="option-grid"></div><label id="otherTreatmentField" hidden>Other treatment<input name="otherTreatment" type="text"></label></section>
+      <section class="panel"><h2>Consultation request</h2>
+        <div class="passage-label" id="passageLabel">Patient history passage</div>
+        <div id="requestEditor" class="passage-editor" role="group" aria-labelledby="passageLabel"><span contenteditable="plaintext-only" data-passage="passagePrefix" role="textbox" aria-label="Opening wording">The patient was diagnosed with </span><input name="diagnosis" aria-label="Diagnosis" placeholder="Diagnosis"><span contenteditable="plaintext-only" data-passage="passageHistory" role="textbox" aria-label="History wording"> and history of </span><input name="history" aria-label="History" placeholder="History"><span contenteditable="plaintext-only" data-passage="passageMedication" role="textbox" aria-label="Medication wording"> and is currently taking </span><input name="currentMedications" aria-label="Current medications" placeholder="Current medications"><span contenteditable="plaintext-only" data-passage="passageEnd" role="textbox" aria-label="Ending wording">.</span></div>
+        <label>Additional patient history<textarea name="additionalPatientHistory" rows="3" maxlength="180" aria-describedby="historyLimit"></textarea><span id="historyLimit" class="muted" role="status">0 / 180 characters · Limited to the PDF space</span></label>
+        <p class="muted">The preceptor faculty signature line remains blank for signing.</p>
+      </section>
+      <section class="panel"><h2>Questions to be answered</h2>
+        <label>Question 1<textarea name="question1" rows="3">Given the patient's current condition, are the listed systemic diseases adequately controlled to proceed with dental treatment?</textarea></label>
+        <label>Question 2<textarea name="question2" rows="3">Please CONFIRM WHETHER THE PATIENT HAS BEEN MEDICALLY CLEARED to undergo dental procedures such as</textarea></label>
+        <div class="option-grid" role="group" aria-label="Procedures for Question 2">
+          <label class="option"><input type="checkbox" name="q2_anesthesia">Local anesthesia with epinephrine</label>
+          <label class="option"><input type="checkbox" name="q2_fillings">Fillings</label>
+          <label class="option"><input type="checkbox" name="q2_extraction">Extraction</label>
+          <label class="option"><input type="checkbox" name="q2_surgery">Oral surgery</label>
+          <label class="option"><input type="checkbox" name="q2_implant">Implant</label>
+          <label class="option"><input type="checkbox" name="q2_cleaning">Cleaning</label>
+        </div>
+      </section>
+
+      <section class="panel"><h2 id="commentsHeading">Other findings/comments</h2>
+        <textarea name="comments" rows="3" maxlength="260" aria-labelledby="commentsHeading" aria-describedby="commentsLimit"></textarea>
+        <span id="commentsLimit" class="muted" role="status">0 / 260 characters · Limited to the PDF space</span>
+      </section>
+      <div class="form-footer"><span id="saveStatus" role="status"></span><button id="clearAll" class="danger" type="button">Clear All</button></div>
+    </form>
+    <aside class="panel preview-panel"><div class="preview-header"><h2>Consultation form</h2></div><iframe id="pdfPreview" title="Medical consultation PDF preview"></iframe><div class="download-controls"><button id="previewForm" class="primary preview-action" type="button">Update preview</button><button id="downloadForm" class="primary" type="button">Download filled PDF</button></div><div id="exportStatus" role="status"></div></aside>
+  </main>
+  <dialog id="clearDialog"><h2>Clear all information?</h2><p>This clears the form and its saved entries on this device.</p><div class="dialog-actions"><button id="cancelClear" type="button" class="secondary">Cancel</button><button id="confirmClear" type="button" class="danger">Clear All</button></div></dialog>
+  <script src="assets/pdf-lib.min.js"></script><script src="assets/form-template.js?v=0c7d1fc195"></script><script src="script.js?v=31e00eb053"></script>
+</body>
+</html>
