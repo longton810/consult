@@ -73,3 +73,19 @@ input, textarea, .passage-editor, .passage-editor [contenteditable] { font-famil
 .passage-editor .inline-rich { display:inline-block; width:180px; min-height:32px; padding:5px 8px; vertical-align:middle; background:#f0f6ff; }
 .selection-bold { position:fixed; z-index:100; padding:5px 12px; font:bold 13px Arial,sans-serif; color:#2563eb; background:white; border:1px solid #b7cae4; border-radius:7px; box-shadow:0 4px 14px rgba(32,51,75,.18); }
 .selection-bold[aria-pressed="true"] { color:white; background:#2563eb; }
+
+/* Fit the page to the screen while preserving vertical scrolling. */
+*, *::before, *::after { box-sizing: border-box; }
+body { max-width: 100%; }
+fieldset { min-inline-size: 0; }
+input, textarea, select, iframe { max-width: 100%; }
+textarea { resize: vertical; }
+[contenteditable="true"] { overflow-wrap: anywhere; }
+
+.workspace > *, .field-grid > *, .option-grid > * { min-width: 0; }
+.page-header, .preview-header, .download-controls, .form-footer, .dialog-actions { flex-wrap: wrap; }
+.passage-editor, .inline-rich { max-width: 100%; overflow-wrap: anywhere; }
+@media(max-width:600px) {
+  .download-controls button { flex: 1 1 160px; }
+  .panel { padding: 14px; }
+}

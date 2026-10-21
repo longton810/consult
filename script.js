@@ -189,7 +189,7 @@ if(typeof document !== 'undefined') {
   };
   const save=()=>{try{localStorage.setItem(STORAGE_KEY,JSON.stringify(read()));document.getElementById('saveStatus').textContent='Saved on this device.';}catch{document.getElementById('saveStatus').textContent='Autosave unavailable.';}};
   try{const saved=JSON.parse(localStorage.getItem(STORAGE_KEY)||'null');if(saved && saved.patientName && !saved.firstName && !saved.lastName){const parts=saved.patientName.trim().split(/\s+/);saved.lastName=parts.length>1?parts.pop():'';saved.firstName=parts.join(' ');}
-    if(saved && saved.studentName==='Long Ton')saved.studentName='Long T. Ton';
+    if(saved && ["Long T. Ton", "Long Ton"].includes(saved.studentName))saved.studentName="";
     if(saved && typeof saved.practiceName==='string')saved.practiceName=saved.practiceName.replace('LECOM - Erie Dental Office (POD 2)','LECOM - Erie Dental Offices\n(POD 2)').replace('LECOM - Erie Dental Office\n(POD 2)','LECOM - Erie Dental Offices\n(POD 2)');
     if(saved && saved.questions && saved.question1 === undefined){saved.question1=saved.questions;saved.question2='';}
     if(saved && saved.requestPassage && saved.passagePrefix === undefined){

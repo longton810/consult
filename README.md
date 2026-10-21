@@ -6,7 +6,7 @@ A standalone LECOM consultation form tool with the Odontogram glass panel design
 
 Open `index.html` locally, or visit the published GitHub Pages site. No installation is required.
 
-- Information fields are always bold. Defaults: Long T. Ton, LECOM - Erie Dental Offices (POD 2), (814) 868 1001, and (814) 868 1039.
+- Information fields are always bold. Student name starts blank. Other defaults: LECOM - Erie Dental Offices (POD 2), (814) 868 1001, and (814) 868 1039.
 - Edit the wording of the patient history passage and its three embedded blanks.
 - Select text in the other blanks to show the Bold button. Formatting is saved and included in the PDF.
 - Selected Question 2 procedures appear after “such as.”
